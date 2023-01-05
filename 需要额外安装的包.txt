@@ -1,0 +1,34 @@
+下载tensorrt-liunx包,pip安装其中的whl文件
+pip install Cython
+pip install pycocotools
+pip install terminaltables
+
+#---------------mmcv安装-----------------
+# 安装如下两个再装mmcv
+pip install Cython
+pip install pytest-runner
+
+# git下来0.4.3版本的源码安装,git选择版本下载,放置在requirements文件夹下
+pip install -e .
+
+#---------------报无pycuda---------------
+pip install pycuda
+#---------------cuda安装-----------------
+ 若 /usr/local/cuda/bin下无nvcc,需要重新安装
+apt-get install nvidia-cuda-toolkit
+# 若有的话将其添加到环境变量
+vim ~/.bashrc进入配置文件；
+添加以下两行：
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+之后更新配置文件
+source ~/.bashrc
+
+#-----报错libnvinfer.so.8: cannot open shared object file: No such file or directory
+vim ~/.bashrc进入配置文件，添加如下：
+export export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/workspace/home/TensorRT-8.0.1.6/lib:$LD_LIBRARY_PATH
+之后更新配置文件
+source ~/.bashrc
+
+#-----报错 AttributeError: 'tensorrt.tensorrt.Builder' object has no attribute  。。。
+将 tensorRT 8 降版本到 tensorRT 7
