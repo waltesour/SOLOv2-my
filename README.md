@@ -1,4 +1,9 @@
-
+modified by SONG:
+> 0、将onnx模型导出文件整合进了soloV2训练仓库中;
+> 1、训练命令和验证命令都写成了train.sh和test.sh的形式;
+> 2、需要的mmcv版本可以查看需要额外安装的包.txt;
+> 3、mmcv-0.4.3源码安装包在requirements文件夹下;
+> 4、训练模型和生成onnx步骤onenote;
 # SOLO: Segmenting Objects by Locations
 
 This project hosts the code for implementing the SOLO algorithms for instance segmentation.
